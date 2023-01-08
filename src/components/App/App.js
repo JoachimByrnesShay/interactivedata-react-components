@@ -16,6 +16,13 @@ function App() {
     convertFrom: "USD",
     convertTo: ["AED", "BGN", "CNY", "EUR", "GBP"],
   });
+    // control filter UI (display of text input) for both base filter and convert/comparisons filter
+    const [baseFilterVal, setBaseFilterVal] = useState("");
+    const [convertFilterVal, setConvertFilterVal] = useState("");
+        // onChange of each select list, value is set appropriately on select element itself.
+    const [baseSelectValue,setBaseSelectValue] = useState(undefined);
+    const [convertSelectValue,setConvertSelectValue] = useState(undefined);
+
 
   // currencyInfo rates are pulled from the API, and will be updated via useEffect when convertFrom changes, as rates requested are values relative to the base currency provided by app via the call to the API
   //  fullNames are the full textual names such as United States Dollar to match the abbreviations for currency such as USD.  These names are used in the informative text displayed on mdoals and in tooltips
@@ -47,11 +54,17 @@ function App() {
   // listen on window for resize.  at less than 950 innerwidth, isSmallScreen will be set to true.  This will be used in JSX in conjunction with ChartsUtils.getChartsOrientation to change the dimension of graph
   // section to horizontal or vertical depending on the value of isSmallScreen, oonditionally using inline css 'width' or 'height' but not both, along with calculated size of graph element
   useEffect(() => windowResizeListener(setIsSmallScreen), []);
+  
+  
 
   return (
     <div className="App">
       <Header />
-      <Configurer />
+      <Configurer 
+        currencySelections={currencySelections}
+        setCurrencySelections = {setCurrencySelections}
+        currencyInfo={currencyInfo}
+      />
       <ChartsDisplay
         currencySelections={currencySelections}
         currencyInfo={currencyInfo}

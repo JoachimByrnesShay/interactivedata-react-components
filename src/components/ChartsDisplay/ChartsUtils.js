@@ -107,6 +107,23 @@ const ChartsUtils = {
     getChartsOrientation: (isSmallScreen) =>
         isSmallScreen ? "width" : "height",
     // default base currency is convertFrom, default comparisons are the standardized currency abbreviations as strings in convertTo.   These values can be changed via UI.
+    // set animate of button to true, so that animating class is added to JSX per ternary condition in JSX
+    startAnimateClearChartsButton: (setAnimateClearChartsButton) => setAnimateClearChartsButton(true),
+        // reset animate state variable so that animating class is removed from JSX for button
+        // set animateClearChartsComparisons to true, which will add appropriate animated class to .ChartContent (main element)
+    clearCharts: (appState) => {
+        appState.setAnimateClearChartsButton(false);
+        appState.setAnimateClearChartsComparisons(true);
+    },
+    // set the last animation variable in the charts clearing process which controlls presence of JSX class to false
+    // set convertTo to empty array, which will result in re-rendering the page with no comparisons listed in configuration section and no comparisons charts,
+    finishClearingCharts: (appState) => {
+        appState.setAnimateClearChartsComparisons(false);
+
+        appState.setCurrencySelections({ ...appState.currencySelections, convertTo: [] });
+    },
+
+
 };
 
 export default ChartsUtils;

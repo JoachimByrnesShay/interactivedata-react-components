@@ -30,6 +30,7 @@ function ChartsDisplay(props) {
                         currencySelections = {currencySelections}
                         modalNowState = {modalNowState}
                         currencyInfo = {currencyInfo}
+                        key = {ix}
                     />
                 );
             })}
