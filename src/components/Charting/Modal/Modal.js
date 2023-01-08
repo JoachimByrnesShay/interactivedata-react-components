@@ -4,7 +4,7 @@ function Modal(props) {
     const currencyInfo = props.currencyInfo;
     const chartInfo = props.chartInfo;
     const currencySelections = props.currencySelections;
-	const {isChartModalNow, setIsChartModalNow} = props.modalNowState;
+	const isChartModalNow = props.modalNowState.isChartModalNow;
     //const modalDisplayClassName = e=> isChartModalNow.displayed[props.ix] ? "isDisplayed" : isChartModalNow.animatingDisappearance[props.ix] ? "dispappearModal" : "";
 	const chartModalIsDisplayed = isChartModalNow.displayed[props.ix]
     const chartModalIsAnimatingDisappearance = isChartModalNow.animatingDisappearance[props.ix];

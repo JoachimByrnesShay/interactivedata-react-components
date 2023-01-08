@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import Header from "../Header/Header.js";
-import Configurer from "../Configurer/Configurer.js";
-import ChartsDisplay from "../ChartsDisplay/ChartsDisplay.js";
+import AllChartsConfiguration from "../Configuration/AllChartsConfiguration/AllChartsConfiguration.js";
+import AllChartsDisplay from "../Charting/AllChartsDisplay/AllChartsDisplay.js";
 import Footer from "../Footer/Footer.js";
-import { fetchAll, windowResizeListener } from "./AppUtils.js";
-import { MaxNumOfComparisons } from "./AppConstants.js";
+import { fetchAll, windowResizeListener } from "../globalUtils.js";
+import { MaxNumOfComparisons } from "../globalConstants.js";
 
 function App() {
   // boolean value stored in isSmallScreen controls the dimension of the charts, i.e. width or height, which is dependant upon screen size,
@@ -60,12 +60,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Configurer 
+      <AllChartsConfiguration
         currencySelections={currencySelections}
         setCurrencySelections = {setCurrencySelections}
         currencyInfo={currencyInfo}
       />
-      <ChartsDisplay
+      <AllChartsDisplay
         currencySelections={currencySelections}
         currencyInfo={currencyInfo}
         isSmallScreen={isSmallScreen}

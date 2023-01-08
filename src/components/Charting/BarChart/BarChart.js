@@ -1,7 +1,7 @@
-import ChartsUtils from "./ChartsUtils.js";
+import ChartsUtils from "../utilities/utils-chartsGeneral.js";
 import Modal from "../Modal/Modal.js";
-import BarChartTitle from "./BarChartTitle";
-import { ChartModalHandler } from "./ChartsUtils.js";
+import BarChartTitle from "../BarChartTitle/BarChartTitle";
+import ChartModalHandlers from "../utilities/utils-chartModals.js";
 
  function BarChart(props) {
     const ix = props.ix;
@@ -10,8 +10,8 @@ import { ChartModalHandler } from "./ChartsUtils.js";
     const chartInfo = props.chartInfo;
     const currencyInfo = props.currencyInfo;
     const currencySelections = props.currencySelections;
-    const onClickHandler = e => ChartModalHandler.showModal(e,ix,modalNowState);
-    const onMouseLeaveHandler = e => ChartModalHandler.hideModal(e,ix,modalNowState);
+    const onClickHandler = e => ChartModalHandlers.showModal(e,ix,modalNowState);
+    const onMouseLeaveHandler = e => ChartModalHandlers.hideModal(e,ix,modalNowState);
     const chartsOrientation = ChartsUtils.getChartsOrientation(isSmallScreen);
     const stylePerScreenSize = {[chartsOrientation]:String(chartInfo.size) + "%"}
     return (

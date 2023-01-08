@@ -1,9 +1,9 @@
 
 
-import BarChartContainer from "./BarChartContainer.js";
-import ChartsUtils from "./ChartsUtils.js";
+import BarChartContainer from "../BarChartContainer/BarChartContainer.js";
+import ChartsUtils from "../utilities/utils-chartsGeneral.js";
 
-function ChartsDisplay(props) {
+function AllChartsDisplay(props) {
     const currencySelections = props.currencySelections;
     const currencyInfo = props.currencyInfo;
     const isSmallScreen = props.isSmallScreen;
@@ -38,4 +38,4 @@ function ChartsDisplay(props) {
     );
 }
 
-export default ChartsDisplay;
+export default AllChartsDisplay;

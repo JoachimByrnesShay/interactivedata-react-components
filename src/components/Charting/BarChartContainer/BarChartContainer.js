@@ -1,5 +1,5 @@
 
-import BarChart from "./BarChart.js";
+import BarChart from "../BarChart/BarChart.js";
 
 function BarChartContainer(props) {
      const ix = props.ix;
