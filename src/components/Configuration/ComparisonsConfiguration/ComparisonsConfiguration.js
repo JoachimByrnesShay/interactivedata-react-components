@@ -10,8 +10,12 @@ function ComparisonsConfiguration(props) {
 				<ComparisonsConfigurationForm 
 					appRefs={props.appRefs}
 					convertFilterValState={props.convertFilterValState}
-				/>
-				
+					convertSelectValState={props.convertSelectValState}
+					setIsFlashDisplayed={props.setIsFlashDisplayed}
+					currencySelectionsState={props.currencySelectionsState}
+					prevConvertIndexState={props.prevConvertIndexState}
+					currencyInfo={props.currencyInfo}
+				/>	
 			</div>
 	)
 	

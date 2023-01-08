@@ -3,7 +3,7 @@ import { MaxNumOfComparisons } from "../../globalConstants.js";
 import BaseConfiguration from "../BaseConfiguration/BaseConfiguration.js";
 import ComparisonsConfiguration from "../ComparisonsConfiguration/ComparisonsConfiguration.js";
 import CurrentConfigurationOverview from "../CurrentConfigurationOverview/CurrentConfigurationOverview.js"
-     
+import PanelToClearCharts from "../PanelToClearCharts/PanelToClearCharts.js";
 function MakeAllConfiguration(props) {
 	//console.log(props.currencySelections);
 	  // storing of indices as previous values aids the control of visual and functional navigation from index 0 on select lists into filter input (focus in filter input) via onKeyUp condition regarding arrowUp
@@ -15,7 +15,7 @@ function MakeAllConfiguration(props) {
 	const [convertFilterVal, setConvertFilterVal] = useState("");
 	// onChange of each select list, value is set appropriately on select element itself.
 	const [baseSelectVal, setBaseSelectVal] = useState(undefined);
-	const [convertSelectValue, setConvertSelectValue] = useState(undefined);
+	const [convertSelectVal, setConvertSelectVal] = useState(undefined);
 	const [animateClearChartsButton, setAnimateClearChartsButton] =useState(false);
 	const [animateClearChartsComparisons, setAnimateClearChartsComparisons] =useState(false);
 	 // flash message is displayed when user attempts to exceed 1 more than the allowed maximum number of comparison/conversion currency selections.  whether flash is displayed is controlled by boolean value of state variable.
@@ -70,6 +70,7 @@ function MakeAllConfiguration(props) {
 
 			{/* check if I need to cross reference baseconfigurer refs here also*/}
 			<ComparisonsConfiguration
+				currencyInfo = {props.currencyInfo}
 				appRefs = {{
 					convertFilter: Refs.convertFilter,  
 					convertSelect: Refs.convertSelect,
@@ -80,15 +81,39 @@ function MakeAllConfiguration(props) {
 						setConvertFilterVal: setConvertFilterVal,
 					}
 				}
+
+				convertSelectValState = {
+					{
+						convertSelectVal: convertSelectVal,
+						setConvertSelectVal:setConvertSelectVal,
+
+					}
+				}
+				setIsFlashDisplayed = {
+					setIsFlashDisplayed
+				}
+
+				currencySelectionsState = {
+					{currencySelections:props.currencySelections,setCurrencySelections: props.setCurrencySelections,}
+				}
+
+				prevConvertIndexState = {
+					{prevConvertIndex, setPrevConvertIndex,}
+				}
 			/>
 			<CurrentConfigurationOverview  
 				currencyInfo={props.currencyInfo}
 				currencySelections={props.currencySelections}
 			/>
-		{/*	<CurrentConfigurationOverview 
+	 
+			<PanelToClearCharts 
+				animateClearChartsButtonState={{
+					animateClearChartsButton: animateClearChartsButton, 
+					setAnimateClearChartsButton: setAnimateClearChartsButton,
+				}
+				}
 			/>
-			<PanelToClearCharts />
-		*/}
+		
 		</section>
 	);
 }

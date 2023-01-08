@@ -17,11 +17,11 @@ function App() {
     convertTo: ["AED", "BGN", "CNY", "EUR", "GBP"],
   });
     // control filter UI (display of text input) for both base filter and convert/comparisons filter
-    const [baseFilterVal, setBaseFilterVal] = useState("");
-    const [convertFilterVal, setConvertFilterVal] = useState("");
+    //const [baseFilterVal, setBaseFilterVal] = useState("");
+    //const [convertFilterVal, setConvertFilterVal] = useState("");
         // onChange of each select list, value is set appropriately on select element itself.
-    const [baseSelectValue,setBaseSelectValue] = useState(undefined);
-    const [convertSelectValue,setConvertSelectValue] = useState(undefined);
+    //const [baseSelectValue,setBaseSelectValue] = useState(undefined);
+    //const [convertSelectVal,setConvertSelectVal] = useState(undefined);
 
 
   // currencyInfo rates are pulled from the API, and will be updated via useEffect when convertFrom changes, as rates requested are values relative to the base currency provided by app via the call to the API

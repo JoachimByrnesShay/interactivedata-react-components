@@ -63,14 +63,14 @@ const ChartsUtils = {
         // set animateClearChartsComparisons to true, which will add appropriate animated class to .ChartContent (main element)
     clearCharts: (appState) => {
         appState.setAnimateClearChartsButton(false);
-        appState.setAnimateClearChartsComparisons(true);
+        //appState.setAnimateClearChartsComparisons(true);
     },
     // set the last animation variable in the charts clearing process which controlls presence of JSX class to false
     // set convertTo to empty array, which will result in re-rendering the page with no comparisons listed in configuration section and no comparisons charts,
     finishClearingCharts: (appState) => {
         appState.setAnimateClearChartsComparisons(false);
 
-        appState.setCurrencySelections({ ...appState.currencySelections, convertTo: [] });
+        //appState.setCurrencySelections({ ...appState.currencySelections, convertTo: [] });
     },
 
 
