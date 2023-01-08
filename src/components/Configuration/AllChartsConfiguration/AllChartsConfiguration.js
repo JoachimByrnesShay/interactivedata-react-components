@@ -107,11 +107,15 @@ function MakeAllConfiguration(props) {
 			/>
 	 
 			<PanelToClearCharts 
-				animateClearChartsButtonState={{
+				animateClearChartsButtonState = {{
 					animateClearChartsButton: animateClearChartsButton, 
-					setAnimateClearChartsButton: setAnimateClearChartsButton,
-				}
-				}
+					setAnimateClearChartsButton: setAnimateClearChartsButton}}
+				
+
+				animateClearChartsComparisonsState = {{
+					animateClearChartsComparisons: props.animateClearChartsComparisonsState.animateClearChartsComparisons,
+					setAnimateClearChartsComparisons: props.animateClearChartsComparisonsState.setAnimateClearChartsComparisons
+					}}
 			/>
 		
 		</section>

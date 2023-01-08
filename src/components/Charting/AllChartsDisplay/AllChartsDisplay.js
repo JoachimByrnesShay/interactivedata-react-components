@@ -5,6 +5,7 @@ import ChartsUtils from "../utilities/utils-chartsGeneral.js";
 
 function AllChartsDisplay(props) {
     const currencySelections = props.currencySelections;
+    const setCurrencySelections = props.setCurrencySelections;
     const currencyInfo = props.currencyInfo;
     const isSmallScreen = props.isSmallScreen;
     // const modalNowState = {
@@ -17,7 +18,15 @@ function AllChartsDisplay(props) {
     };
 
     return (
-        <main className={`ChartContent`}>
+        <main 
+            onAnimationEnd={()=>ChartsUtils.finishClearingCharts(
+                {setAnimateClearChartsComparisons: props.setAnimateChartsComparisons,
+                setCurrencySelections: setCurrencySelections,
+                currencySelections: currencySelections}
+            )}
+
+            className={`ChartContent ${props.animateClearChartsComparisonsState.animateClearChartsComparisons ? 'ChartContent--clearCharts' : ''}`}
+        >
             {ChartsUtils.getChartsCurrenciesWithSize(
                 currencySelections,
                 currencyInfo

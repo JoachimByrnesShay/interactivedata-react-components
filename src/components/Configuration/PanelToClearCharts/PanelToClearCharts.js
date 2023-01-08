@@ -18,6 +18,7 @@ function ClearChartsContainer(props) {
 							//props.animateClearChartsButtonState.setAnimateClearChartsButton,
 							setAnimateClearChartsButton: props.animateClearChartsButtonState.setAnimateClearChartsButton,
 							//[ChartsUtils.setAnimateClearChartsComparisons]: setAnimateClearChartsComparisons,
+							setAnimateClearChartsComparisons: props.animateClearChartsComparisonsState.setAnimateClearChartsComparisons,
 						}
 					)}
 				>

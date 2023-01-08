@@ -55,8 +55,11 @@ function App() {
   // section to horizontal or vertical depending on the value of isSmallScreen, oonditionally using inline css 'width' or 'height' but not both, along with calculated size of graph element
   useEffect(() => windowResizeListener(setIsSmallScreen), []);
   
-  
-
+  const [animateClearChartsComparisons,setAnimateClearChartsComparisons]= useState(false);
+  const animateClearChartsComparisonsState = {
+    animateClearChartsComparisons: animateClearChartsComparisons,
+    setAnimateClearChartsComparisons: setAnimateClearChartsComparisons,
+  }
   return (
     <div className="App">
       <Header />
@@ -64,9 +67,13 @@ function App() {
         currencySelections={currencySelections}
         setCurrencySelections = {setCurrencySelections}
         currencyInfo={currencyInfo}
+        animateClearChartsComparisonsState={animateClearChartsComparisonsState}
       />
       <AllChartsDisplay
+        animateClearChartsComparisonsState={animateClearChartsComparisonsState}
+        setAnimateClearChartsComparisons={setAnimateClearChartsComparisons}
         currencySelections={currencySelections}
+        setCurrencySelections={setCurrencySelections}
         currencyInfo={currencyInfo}
         isSmallScreen={isSmallScreen}
         chartModalNowState = {{isChartModalNow,setIsChartModalNow}}
