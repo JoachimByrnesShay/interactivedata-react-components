@@ -10,14 +10,16 @@ function BaseConfigurationForm(props) {
 				baseFilterValState = {props.baseFilterValState}
 			/>
 			<BaseConfigurationSelect 
-				appRefs = {props.appRefs}
-				currencySelectionsState = {props.currencySelectionsState}
-				baseSelectValState = {props.baseSelectValState}
-				baseFilterValState = {props.baseFilterValState}
-				currencyInfo = {props.currencyInfo}
-				prevBaseIndexState = {props.prevBaseIndexState}
+				// appRefs = {props.appRefs}
+				// currencySelectionsState = {props.currencySelectionsState}
+				// baseSelectValState = {props.baseSelectValState}
+				// baseFilterValState = {props.baseFilterValState}
+				// currencyInfo = {props.currencyInfo}
+				// prevBaseIndexState = {props.prevBaseIndexState}
+				{...props}
 				 
 			/>
+				
 		</form>
 	)
 }

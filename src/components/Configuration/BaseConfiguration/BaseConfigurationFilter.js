@@ -13,7 +13,11 @@ function BaseConfigurationFilter(props) {
 					className={"Configure-baseFilter"}
 					value={props.baseFilterValState.baseFilterVal}
 					onKeyUp={(e) =>
-						FilterHandling.handleBaseFilterDownArrowToSelect(
+						// FilterHandling.handleBaseFilterDownArrowToSelect(
+						// 	props.appRefs.baseSelect,
+						// 	e
+						// )
+						FilterHandling.handleFilterDownArrowToSelect(
 							props.appRefs.baseSelect,
 							e
 						)

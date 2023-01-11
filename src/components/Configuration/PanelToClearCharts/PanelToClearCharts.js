@@ -1,4 +1,4 @@
-import ChartsUtils from "../../Charting/utilities/utils-chartsGeneral.js"
+import ChartsUtils from "../../Charting/AllCharts/utils-allChartsDisplay.js"
 function ClearChartsContainer(props) {
 	return (
 

@@ -12,7 +12,11 @@ function ComparisonsConfigurationFilter(props) {
 					className={"Configure-comparisonsFilter"}
 					value={props.convertFilterValState.convertFilterVal}
 					onKeyUp={(e) =>
-						FilterHandling.handleConvertFilterDownArrowToSelect(
+						// FilterHandling.handleConvertFilterDownArrowToSelect(
+						// 	props.appRefs.convertSelect,
+						// 	e
+						// )
+						FilterHandling.handleFilterDownArrowToSelect(
 							props.appRefs.convertSelect,
 							e
 						)

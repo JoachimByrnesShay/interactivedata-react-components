@@ -4,7 +4,7 @@
 
 ### deployed on heroku, live page here---
 
-[soon]
+https://interactive-react-components.herokuapp.com/
 
 ### github repository---  
 

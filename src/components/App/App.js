@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Header from "../Header/Header.js";
-import AllChartsConfiguration from "../Configuration/AllChartsConfiguration/AllChartsConfiguration.js";
-import AllChartsDisplay from "../Charting/AllChartsDisplay/AllChartsDisplay.js";
 import Footer from "../Footer/Footer.js";
+import AllChartsConfiguration from "../Configuration/AllChartsConfiguration/AllChartsConfiguration.js";
+import AllCharts from "../Charting/AllCharts/AllCharts.js";
+
 import { fetchAll, windowResizeListener } from "../globalUtils.js";
 import { MaxNumOfComparisons } from "../globalConstants.js";
 
@@ -64,19 +65,20 @@ function App() {
     <div className="App">
       <Header />
       <AllChartsConfiguration
+        animateClearChartsComparisonsState={animateClearChartsComparisonsState}
+         setAnimateClearChartsComparisons={setAnimateClearChartsComparisons}
+        currencyInfo={currencyInfo}
         currencySelections={currencySelections}
         setCurrencySelections = {setCurrencySelections}
-        currencyInfo={currencyInfo}
-        animateClearChartsComparisonsState={animateClearChartsComparisonsState}
       />
-      <AllChartsDisplay
+      <AllCharts
         animateClearChartsComparisonsState={animateClearChartsComparisonsState}
         setAnimateClearChartsComparisons={setAnimateClearChartsComparisons}
+        chartModalNowState = {{isChartModalNow,setIsChartModalNow}}
+        currencyInfo={currencyInfo}
         currencySelections={currencySelections}
         setCurrencySelections={setCurrencySelections}
-        currencyInfo={currencyInfo}
         isSmallScreen={isSmallScreen}
-        chartModalNowState = {{isChartModalNow,setIsChartModalNow}}
       />
       <Footer />
     </div>
