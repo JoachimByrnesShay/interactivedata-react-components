@@ -49,7 +49,7 @@ function App() {
   // call fetch on first render and whenever currencySelections.convertFrom changes (the base currency), as the rates to be retrieved from API for all currencies are relative to the base currency, and therefore will change
   useEffect(
     () => fetchAll(currencySelections, currencyInfo, setCurrencyInfo),
-    [currencySelections.convertFrom]
+    [currencySelections]
   );
 
   // listen on window for resize.  at less than 950 innerwidth, isSmallScreen will be set to true.  This will be used in JSX in conjunction with ChartsUtils.getChartsOrientation to change the dimension of graph
@@ -66,7 +66,7 @@ function App() {
       <Header />
       <AllChartsConfiguration
         animateClearChartsComparisonsState={animateClearChartsComparisonsState}
-         setAnimateClearChartsComparisons={setAnimateClearChartsComparisons}
+        setAnimateClearChartsComparisons={setAnimateClearChartsComparisons}
         currencyInfo={currencyInfo}
         currencySelections={currencySelections}
         setCurrencySelections = {setCurrencySelections}

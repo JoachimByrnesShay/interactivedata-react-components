@@ -69,7 +69,14 @@ export   const SelectHandling = {
         handleOptionClick_base: ({baseState, optionVal}, e) => {
             // double click, provide new value for currencySelections state variable using setter
             if (e.detail >= 2) {
-                baseState.setCurrencySelections({ ...baseState.currencySelections, convertFrom: optionVal })
+                let convertTo = baseState.currencySelections.convertTo;
+                let ixInConvertTo = convertTo.indexOf(optionVal);
+                if (ixInConvertTo != -1){
+                    convertTo = [...baseState.currencySelections.convertTo.slice(0,ixInConvertTo),...baseState.currencySelections.convertTo.slice(ixInConvertTo+1)];
+
+                }
+                baseState.setCurrencySelections({convertTo: convertTo, convertFrom: optionVal })
+
             }
         },
         // same as above, again with additional complexity due to we may select multiple items with conversion/comparisons list and we need to be able to slice and remove if 
