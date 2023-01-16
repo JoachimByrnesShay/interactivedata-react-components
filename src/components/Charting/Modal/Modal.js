@@ -1,4 +1,5 @@
 // import ModalText from "./ModalText.js"
+import './Modal.css';
 
 function Modal(props) {
     // const currencyInfo = props.currencyInfo;

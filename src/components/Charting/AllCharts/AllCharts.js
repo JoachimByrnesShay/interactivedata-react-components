@@ -1,5 +1,6 @@
 import BarChart from "../BarChart/BarChart.js";
 import ChartsUtils from "./utils-allChartsDisplay.js";
+import "./AllCharts.css";
 
 function AllCharts(props) {
     const currencySelections = props.currencySelections;
@@ -10,8 +11,8 @@ function AllCharts(props) {
         isChartModalNow: props.chartModalNowState.isChartModalNow,
         setIsChartModalNow: props.chartModalNowState.setIsChartModalNow,
     };
-    console.log("props in allchartsdisplay: ", props);
-    console.log('animateclearchartscomparisons is: ', props.setAnimateClearChartsComparisons)
+    // console.log("props in allchartsdisplay: ", props);
+    // console.log('animateclearchartscomparisons is: ', props.setAnimateClearChartsComparisons)
     return (
         <main
             onAnimationEnd={() =>

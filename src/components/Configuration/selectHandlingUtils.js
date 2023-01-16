@@ -5,11 +5,14 @@ export   const SelectHandling = {
  
         // used as onKeyUp listener on select element for base currency selection, offers control of behavior upon 'enter' press on option (child of select) 
         // as well as upon upArrow when option at index 0 is currently selected with resulting functionality in latter case of navigating up into base filter input field
-        baseSelectKeys: (({selectState, appRefs}, e)=>{
+        baseSelectKeys: (({selectState, appRefs},e)=>{
+           // e.preventDefault();
             let ix = e.target.selectedIndex;
 
             // on Enter key pressed on option in select element, the convertFrom currency will be changed ot the new value, i.e. of option selected upon enter pressed
             if(e.key === 'Enter') {
+               // alert(e)
+               // e.preventDefault();
                  selectState.setCurrencySelections({ ...selectState.currencySelections, convertFrom: e.target.value })
             } 
             // if the previous recorded baseSelect-index value representes the first option (ix 0) and the upArrow is pressed, move up into the base filter field
@@ -27,6 +30,13 @@ export   const SelectHandling = {
             // which would not provide the desired control for it would have the effect of jumping into filter field in one listen when moving from -1 to 0, i.e., when moving up the list, the user will never sit on index 0 in that case
             selectState.setPrevBaseIndex(ix);
         }),
+
+
+  
+        // similar functionality to baseSelectKeys offered for the conversion currencies select list, with additional complexity of that the comparisons list allows for selecting an array of size up to MaxNumOfComparisons,
+        // and not only one value.  This array is the value of the state variable currencySelections.convertTo.  "enter" key on comparison/conversion currency option is a selection funcationality which 
+        // will either add the selected currency to the selected comparisons which will be displayed as charts vs the selected base currency, or will remove the currency from the conversions list if it 
+        // is already present in the list, or will result in displaying a flash warning message if no further comparison currencies can be added unless one or more are deselected due to being at max size for the convertTo array,
         // similar functionality to baseSelectKeys offered for the conversion currencies select list, with additional complexity of that the comparisons list allows for selecting an array of size up to MaxNumOfComparisons,
         // and not only one value.  This array is the value of the state variable currencySelections.convertTo.  "enter" key on comparison/conversion currency option is a selection funcationality which 
         // will either add the selected currency to the selected comparisons which will be displayed as charts vs the selected base currency, or will remove the currency from the conversions list if it 
@@ -71,7 +81,7 @@ export   const SelectHandling = {
             if (e.detail >= 2) {
                 let convertTo = baseState.currencySelections.convertTo;
                 let ixInConvertTo = convertTo.indexOf(optionVal);
-                if (ixInConvertTo != -1){
+                if (ixInConvertTo !== -1){
                     convertTo = [...baseState.currencySelections.convertTo.slice(0,ixInConvertTo),...baseState.currencySelections.convertTo.slice(ixInConvertTo+1)];
 
                 }

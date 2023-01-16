@@ -1,0 +1,25 @@
+
+  :root {/*CSS variables for element background, border, default boxShadow colors */
+    --Page-backgroundColor: #cddeee;
+  
+    --Header-backgroundColor: #38598b;
+    --Footer-backgroundColor: rgb(51, 66, 87);
+    --Footer-textColor:  white;
+    --ChartContent-linearGradientBackground: linear-gradient(to bottom, #ebf1f6 0%,#abd3ee 50%,#2ec3eb 51%,#d5ebfb 100%);
+    --ChartContent-borderColor: black;
+    --ChartContent-barChart-boxShadowColor: grey;
+    --ChartContent-barChart--odd-backgroundColor: #9f4b7a;
+    --ChartContent-barChart--even-backgroundColor: #aeddcd;
+    --ChartContent-barChartContainer--is-baseChartColor: rgba(175,100,55,.4);
+    --Configure-linearGradientBackground: linear-gradient(to left, #ebf1f6 0%,#abd3ee 20%,#2ec3eb 71%,#d5ebfb 100%);
+    --Configure-selectBoxes-linearGradientBackground: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
+    --Configure-selectBoxes-backgroundColor: #f1dfd1;
+    --Modal-backgroundColor: #28282b;
+    --Page-boxShadowColor: black;
+    --Header-flashMessageColor: orange;
+    /* for text colors */
+    --Page-textColor: white;
+    --Header-textColor: beige;
+    --Header-flashContainer-textColor: black;
+    --Modal-textColor: white;
+  }

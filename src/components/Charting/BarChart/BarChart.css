@@ -1,15 +1,4 @@
-.ChartContent {
-    background: #ebf5f9;
-    background-image: var(--ChartContent-linearGradientBackground);
-    display: flex;
-    position: relative;
-    justify-content: space-around;
-    align-content: flex-end;
-    border: .5em solid var(--ChartContent-borderColor);
-    border-radius: .5em;
-  }
-  
-  .ChartContent-barChartContainer {
+.ChartContent-barChartContainer {
     position: relative;
     display: flex;
     /* text "selectability on" changes cursor to select cursor in UI on mouseover or drag.  set user-select to none so selectability is off, no cursor change when user drags or mouseover on chart text */
@@ -87,47 +76,67 @@
   }
   
 
+ @media only screen and (max-width: 950px) {
 
-  .Modal {
-    color: var(--Modal-textColor);
-    visibility:hidden;
-    background-color: var(--Modal-backgroundColor);
-    border-radius: .6em;
+
+  .ChartContent-barChartContainer {/* charts are adjusted to be appropriately styled for re-orientation to horizontal charts on small screens, vs vertical on 950px+ screens */
+    width: 100%;
+    height: inherit;
+    height: 5em;
+  }
+
+  .ChartContent-barChart {/* since ChartContent-barCharts have INLINE hardcoded styling of height in html for default vertical charts, use !important to change height for this class in css stylesheet *//* height: 60%;height: 5vh;
+ */
+    justify-self: flex-end;
+    align-self: center;
+    border-radius: 0 .3em .3em 0;
+    border-width: 2px 7px 2px 0px;
+    font-size: 95%;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: .5em;
+    padding-top: 0;
+    height: 90%;
+  }
+ 
+
+  .ChartContent-barChartContainer.is-baseChart::after {
+    content: "BASE CURRENCY";
+    color:black;
+    font-weight:bold;
+    text-orientation: mixed;
     position: absolute;
+    
+    top: 35%;
+    left: 35%;
+    writing-mode: horizontal-tb;
+   
+    display: inline-block;
     margin: 0 auto;
-    top: 15em;
-    top:50%;
-    white-space: nowrap;
-    padding: 0 1em;
-    align-items: center;
-    align-self: unsafe center;
-    height: 110px;
-    box-shadow: 2px 3px 1px var(--Page-boxShadowColor);
-    z-index: 20;
+    text-shadow:1px 1px 3px white;
   }
-  
-  /* state of modal = display */
-  
-  /* make modal visible, and use flex to keep text centered consistently across screenwidth changes*/
-  
-  .Modal.isdisplayed {
-    display: flex;
-    visibility:visible;
-    position: absolute;
-    flex-direction: column;
-    justify-content: center;
+ }
+
+
+ @media only screen and (max-width:  330px) {
+  .ChartContent-barChart {
     align-items: center;
-    opacity:1;
+    font-size: .9em;
+    padding-top: 9%;
+    padding-bottom: 5%;
   }
+}
 
-  /* using css transformation to animate the disapparance of modal as appropriate */
-  .Modal.disappearModal {
-    position:absolute;
-    visibility:visible;
-    height:0%;
-    font-size:0;
-    transform:rotate(380deg);
-    transition-property: height, transform, font-size;
-    transition-duration: 900ms;
-  } 
 
+
+/* for a more pleasing transition of disappearance of all barChartContainers on clearcharts button click */
+
+@keyframes clearCharts {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }

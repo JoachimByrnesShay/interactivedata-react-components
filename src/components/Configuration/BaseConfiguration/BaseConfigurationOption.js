@@ -11,10 +11,12 @@ function BaseConfigurationOption(props) {
 	};
 	return (
 		<option
-			value={props.currency}
+			//value={props.currency}
 			className={"Configure-baseOption"}
 			onClick={(e) => {
+				
 				SelectHandling.handleOptionClick_base(
+
 					// baseState.setCurrencySelections({ ...baseState.currencySelections, convertFrom: optionVal })
 					{ ...handleOptionClick_baseArg, optionVal: props.currency },
 					e

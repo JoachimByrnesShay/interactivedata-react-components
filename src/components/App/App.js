@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+// import "../../css/vars.css";
+import "./App.css";
 import Header from "../Header/Header.js";
 import Footer from "../Footer/Footer.js";
 import AllChartsConfiguration from "../Configuration/AllChartsConfiguration/AllChartsConfiguration.js";
@@ -46,7 +48,8 @@ function App() {
     animatingDisappearance: Array(MaxNumOfComparisons + 1).fill(false),
   });
 
-  // call fetch on first render and whenever currencySelections.convertFrom changes (the base currency), as the rates to be retrieved from API for all currencies are relative to the base currency, and therefore will change
+  // call fetch on first render and whenever changes 
+  //, as the rates to be retrieved from API for all currencies are relative to the base currency, and therefore will change
   useEffect(
     () => fetchAll(currencySelections, currencyInfo, setCurrencyInfo),
     [currencySelections]
@@ -62,7 +65,7 @@ function App() {
     setAnimateClearChartsComparisons: setAnimateClearChartsComparisons,
   }
   return (
-    <div className="App">
+    <div className="App" onKeyDown={(e)=>e.keyCode === 13 ? e.preventDefault() : undefined}>
       <Header />
       <AllChartsConfiguration
         animateClearChartsComparisonsState={animateClearChartsComparisonsState}

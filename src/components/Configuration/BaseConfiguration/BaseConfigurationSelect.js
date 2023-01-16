@@ -16,6 +16,7 @@ function BaseConfigurationSelect(props) {
 			baseSelect: props.appRefs.baseSelect,
 			baseFilter: props.appRefs.baseFilter,
 		},
+
 	}
 	
 
@@ -36,6 +37,7 @@ function BaseConfigurationSelect(props) {
 					currency={currency}
 					currencyInfo={props.currencyInfo}
 					currencySelectionsState={props.currencySelectionsState}
+					
 				/>
 			)))
 	}
@@ -51,6 +53,7 @@ function BaseConfigurationSelect(props) {
 			onChange={(e) =>
 				props.baseSelectValState.setBaseSelectVal(e.target.value)
 			}
+
 		>
 		{currencyNamesToOptions(Object.keys(props.currencyInfo.fullNames))}
 		</select>

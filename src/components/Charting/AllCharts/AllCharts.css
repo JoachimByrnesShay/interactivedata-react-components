@@ -1,0 +1,18 @@
+.ChartContent {
+    background: #ebf5f9;
+    background-image: var(--ChartContent-linearGradientBackground);
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-content: flex-end;
+    border: .5em solid var(--ChartContent-borderColor);
+    border-radius: .5em;
+  }
+  
+  @media only screen and (max-width: 950px) {
+  .ChartContent {/*change orientation of .ChartContent flex items on smaller screens, i.e. vertical to horizontal barCharts */
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+}

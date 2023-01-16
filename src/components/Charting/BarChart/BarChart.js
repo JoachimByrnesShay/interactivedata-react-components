@@ -3,6 +3,7 @@ import { ChartModalHandlers } from "./utils-barChart.js";
 
 import Modal from "../Modal/Modal.js";
 import BarChartTitle from "./BarChartTitle";
+import "./BarChart.css";
 
 function BarChart(props) {
     // const ix = props.ix;

@@ -4,6 +4,10 @@ import BaseConfiguration from "../BaseConfiguration/BaseConfiguration.js";
 import ComparisonsConfiguration from "../ComparisonsConfiguration/ComparisonsConfiguration.js";
 import CurrentConfigurationOverview from "../CurrentConfigurationOverview/CurrentConfigurationOverview.js"
 import PanelToClearCharts from "../PanelToClearCharts/PanelToClearCharts.js";
+import './Configuration.css';
+
+
+
 function MakeAllConfiguration(props) {
 	//console.log(props.currencySelections);
 	  // storing of indices as previous values aids the control of visual and functional navigation from index 0 on select lists into filter input (focus in filter input) via onKeyUp condition regarding arrowUp
@@ -71,6 +75,9 @@ function MakeAllConfiguration(props) {
 			{/* check if I need to cross reference baseconfigurer refs here also*/}
 			<ComparisonsConfiguration
 				currencyInfo = {props.currencyInfo}
+				currencySelectionsState = {
+					{currencySelections:props.currencySelections,setCurrencySelections: props.setCurrencySelections,}
+				}
 				appRefs = {{
 					convertFilter: Refs.convertFilter,  
 					convertSelect: Refs.convertSelect,
@@ -89,16 +96,13 @@ function MakeAllConfiguration(props) {
 
 					}
 				}
-				setIsFlashDisplayed = {
-					setIsFlashDisplayed
-				}
-
-				currencySelectionsState = {
-					{currencySelections:props.currencySelections,setCurrencySelections: props.setCurrencySelections,}
-				}
 
 				prevConvertIndexState = {
 					{prevConvertIndex, setPrevConvertIndex,}
+				}
+
+				setIsFlashDisplayed = {
+					setIsFlashDisplayed
 				}
 			/>
 			<CurrentConfigurationOverview  
@@ -107,15 +111,17 @@ function MakeAllConfiguration(props) {
 			/>
 	 
 			<PanelToClearCharts 
-				animateClearChartsButtonState = {{
-					animateClearChartsButton: animateClearChartsButton, 
-					setAnimateClearChartsButton: setAnimateClearChartsButton}}
+				// animateClearChartsButtonState = {{
+				// 	animateClearChartsButton: animateClearChartsButton, 
+				// 	setAnimateClearChartsButton: setAnimateClearChartsButton}}
 				
-
-				animateClearChartsComparisonsState = {{
-					animateClearChartsComparisons: props.animateClearChartsComparisonsState.animateClearChartsComparisons,
-					setAnimateClearChartsComparisons: props.animateClearChartsComparisonsState.setAnimateClearChartsComparisons
-					}}
+				animateClearChartsButtonState = {{animateClearChartsButton, setAnimateClearChartsButton}}
+				
+				animateClearChartsComparisonsState = {props.animateClearChartsComparisonsState}
+				// animateClearChartsComparisonsState = {{
+				// 	animateClearChartsComparisons: props.animateClearChartsComparisonsState.animateClearChartsComparisons,
+				// 	setAnimateClearChartsComparisons: props.animateClearChartsComparisonsState.setAnimateClearChartsComparisons
+				// 	}}
 			/>
 		
 		</section>
