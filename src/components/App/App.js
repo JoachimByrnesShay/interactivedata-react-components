@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import "../../css/vars.css";
 import "./App.css";
 import Header from "../Header/Header.js";
 import Footer from "../Footer/Footer.js";

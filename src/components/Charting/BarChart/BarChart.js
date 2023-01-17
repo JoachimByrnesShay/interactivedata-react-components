@@ -6,12 +6,6 @@ import BarChartTitle from "./BarChartTitle";
 import "./BarChart.css";
 
 function BarChart(props) {
-    // const ix = props.ix;
-    // const isSmallScreen = props.isSmallScreen; ?????
-    // const modalNowState = props.modalNowState;
-    // const chartInfo = props.chartInfo;
-    // const currencyInfo = props.currencyInfo;
-    // const currencySelections = props.currencySelections;
     const onClickHandler = (e) =>
         ChartModalHandlers.showModal(e, props.ix, props.modalNowState);
     const onMouseLeaveHandler = (e) =>
