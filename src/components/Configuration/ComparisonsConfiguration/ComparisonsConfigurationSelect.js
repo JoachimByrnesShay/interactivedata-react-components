@@ -21,12 +21,12 @@ function ComparisonsConfigurationSelect(props) {
 							prevConvertIndex: props.prevConvertIndexState.prevConvertIndex,
 							setPrevConvertIndex: props.prevConvertIndexState.setPrevConvertIndex,
 						},
-						refs: {
+						appRefs: {
 							convertFilter: props.appRefs.convertFilter,
 							convertSelect: props.appRefs.convertSelect,
 						},
-						e: e,
-					})
+
+					}, e)
 				}
 			>
 				{

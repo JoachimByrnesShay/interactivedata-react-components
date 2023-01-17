@@ -41,7 +41,7 @@ export   const SelectHandling = {
         // and not only one value.  This array is the value of the state variable currencySelections.convertTo.  "enter" key on comparison/conversion currency option is a selection funcationality which 
         // will either add the selected currency to the selected comparisons which will be displayed as charts vs the selected base currency, or will remove the currency from the conversions list if it 
         // is already present in the list, or will result in displaying a flash warning message if no further comparison currencies can be added unless one or more are deselected due to being at max size for the convertTo array
-        convertSelectKeys: ({selectState, appRefs, e})=> {
+        convertSelectKeys: ({selectState, appRefs},e)=> {
             let ix = e.target.selectedIndex;
 
             let val = e.target.value;

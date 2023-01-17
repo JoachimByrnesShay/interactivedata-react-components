@@ -15,7 +15,7 @@
   .Header {
     background: var(--Header-backgroundColor);
     align-items: stretch;
-    padding: .3em;
+    padding: 1.2em;
     display: grid;
     grid-template-columns: 3fr 5fr;
   }

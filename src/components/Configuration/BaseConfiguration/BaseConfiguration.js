@@ -11,11 +11,11 @@ function BaseConfiguration(props) {
 	return (
 
 		<div className="Configure-Base">
-				<BaseConfigurationHeading 
+			{/*	<BaseConfigurationHeading 
 					currencyInfo={props.currencyInfo}
 					currencySelections={props.currencySelections}
 					
-				/>
+				/>*/}
 				<BaseConfigurationForm  
 					// baseFilterValState={props.baseFilterValState}
 					// baseSelectValState={props.baseSelectValState}
