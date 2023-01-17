@@ -11,7 +11,7 @@ function BaseConfigurationOption(props) {
 	};
 	return (
 		<option
-			//value={props.currency}
+			value={props.currency}
 			className={"Configure-baseOption"}
 			onClick={(e) => {
 				

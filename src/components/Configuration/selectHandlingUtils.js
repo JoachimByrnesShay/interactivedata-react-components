@@ -10,18 +10,18 @@ export   const SelectHandling = {
             let ix = e.target.selectedIndex;
 
             // on Enter key pressed on option in select element, the convertFrom currency will be changed ot the new value, i.e. of option selected upon enter pressed
-            if(e.key === 'Enter') {
+             if(selectState.prevBaseIndex === 0 && e.keyCode === 38){
+                selectState.setBaseSelectValue(undefined);
+                appRefs.baseSelect.current.selectedIndex = -1;
+                appRefs.baseFilter.current.focus();
+
+            }  else if(e.key === 'Enter') {
                // alert(e)
                // e.preventDefault();
                  selectState.setCurrencySelections({ ...selectState.currencySelections, convertFrom: e.target.value })
             } 
             // if the previous recorded baseSelect-index value representes the first option (ix 0) and the upArrow is pressed, move up into the base filter field
-            if(selectState.prevBaseIndex === 0 && e.keyCode === 38){
-                selectState.setBaseSelectValue(undefined);
-                appRefs.baseSelect.current.selectedIndex = -1;
-                appRefs.baseFilter.current.focus();
-
-            } 
+           
             // otherwise either downArrow or another key has been pressed, default behavior of down arrow is to continue to traverse downward through the options one by one.
             // default behavior of other alpha keys IF the filter field is blank will be to navigate to the next option whose value starts with the letter pressed, otherwise constrained by filter population
             // update prevBaseIndex in all cases. as implemented, since this method as a sole onKeyUp listener is branching between 2 special cases, the above conditional

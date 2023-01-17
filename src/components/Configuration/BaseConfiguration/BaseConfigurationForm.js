@@ -1,19 +1,21 @@
-import {useState} from 'react';
+
 import BaseConfigurationFilter from "./BaseConfigurationFilter.js";
 import BaseConfigurationSelect from "./BaseConfigurationSelect.js";
 
 function BaseConfigurationForm(props) {
-	const [thisSelectedIndex, setThisSelectedIndex] = useState(-1)
-	const thisSelectedIndexState = {thisSelectedIndex: thisSelectedIndex, setThisSelectedIndex: setThisSelectedIndex};
+	//nst [thisSelectedIndex, setThisSelectedIndex] = useState(-1)
+	//nst thisSelectedIndexState = {thisSelectedIndex: thisSelectedIndex, setThisSelectedIndex: setThisSelectedIndex};
 	return (
-		<form className="Configure-baseForm" onKeyDown={e=>e.key==='Enter' ? e.preventDefault: undefined}>
+		<form className="Configure-baseForm">
 			<BaseConfigurationFilter 
 				// appRefs = {props.appRefs}
 				// baseFilterValState = {props.baseFilterValState}
 				// baseSelectValState= {props.baseSelectValState}
 				// prevBaseIndexState = {props.prevBaseIndexState}
-			{...props}
-			thisSelectedIndexState={thisSelectedIndexState}
+			//..props}
+			appRefs = {props.appRefs}
+				baseFilterValState = {props.baseFilterValState}
+			//isSelectedIndexState={thisSelectedIndexState}
 			/>
 			<BaseConfigurationSelect 
 				// appRefs = {props.appRefs}

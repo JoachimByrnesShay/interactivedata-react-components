@@ -65,7 +65,7 @@ function App() {
     setAnimateClearChartsComparisons: setAnimateClearChartsComparisons,
   }
   return (
-    <div className="App" onKeyDown={(e)=>e.keyCode === 13 ? e.preventDefault() : undefined}>
+    <div className="App">
       <Header />
       <AllChartsConfiguration
         animateClearChartsComparisonsState={animateClearChartsComparisonsState}
