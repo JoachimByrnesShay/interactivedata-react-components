@@ -2,14 +2,16 @@ import {FilterHandling} from '../filterHandlingUtils.js';
 //import ComparisonsConfigurationFilter from './ComparisonsConfigurationFilter.js'
 import ComparisonsConfigurationSelect from './ComparisonsConfigurationSelect.js';
 //import ComparisonsConfigurationHeading from './ComparisonsConfigurationHeading.js';
-import {MaxNumOfComparisons} from "../../globalConstants.js";
+import './ComparisonsConfiguration.css';
 
 
 function ComparisonsConfigurationForm(props) {
 	return (
 			<div className="Configure-Comparisons">
 		<form className="Configure-comparisonsForm">
-		    <ComparisonsConfigurationHeading />
+		    <ComparisonsConfigurationHeading 
+		    	maxNumOfComparisons={props.maxNumOfComparisons}
+		    />
 			<ComparisonsConfigurationFilter 
 				appRefs={props.appRefs}
 				convertFilterValState={props.convertFilterValState}
@@ -23,6 +25,7 @@ function ComparisonsConfigurationForm(props) {
 				setIsFlashDisplayed={props.setIsFlashDisplayed}
 				currencySelectionsState={props.currencySelectionsState}
 				prevConvertIndexState={props.prevConvertIndexState}
+				maxNumOfComparisons={props.maxNumOfComparisons}
 		
 			/>
 		</form>
@@ -31,10 +34,10 @@ function ComparisonsConfigurationForm(props) {
 	)
 }
 
-function ComparisonsConfigurationHeading() {
+function ComparisonsConfigurationHeading(props) {
 	return (
 			<h2 className="Configure-comparisonHeading">
-					Select &lt;= {MaxNumOfComparisons} currencies to compare
+					Select &lt;= {props.maxNumOfComparisons} currencies to compare
 			</h2>
 	)	
 }	

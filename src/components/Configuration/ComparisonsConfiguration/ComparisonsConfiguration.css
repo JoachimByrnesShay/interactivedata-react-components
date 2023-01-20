@@ -1,0 +1,92 @@
+ 
+
+  .Configure-comparisonsForm {
+    display: grid;
+  }
+  
+  /* baseHeading and comparisonHeading are h2 for base and comparison section */
+  
+  .Configure-comparisonHeading {
+    margin-left: 5%;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    text-transform: uppercase;
+    font-size: .9em;
+    display: inline-block;
+  }
+  
+.Configure-comparisonsFilter {
+    max-width: 4em;
+    margin-left:1em;
+  }
+  
+.Configure-comparisonsFilterLabel {
+    margin-left: 5%;
+    font-weight: bold;
+    text-shadow: 1px 2px 1px grey;
+  }
+  
+  .Configure-comparisonsSelectBox, .Configure-baseSelectBox {
+    margin-top: .8em;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 90%;
+    justify-self: center;
+    list-style-type: none;
+    background-color: var(--Configure-selectBoxes-backgroundColor);
+    background-image: var(--Configure-selectBoxes-linearGradientBackground);
+    color: black;
+    text-shadow: 1px 1px 1px grey;
+  }
+
+
+
+
+
+  .Configure-comparisonOption {
+    padding: 3px 0 3px 0;
+    border: 1px solid transparent;
+    list-style-type: none;
+    border-top: 1px solid black;
+    box-sizing: border-box;
+    margin-bottom: 3px;
+    scroll-behavior:smooth;
+    }
+
+
+
+
+
+.Configure-comparisonOption:not(.is-selectedComparison):checked {
+    color: white !important;
+    position: relative;
+    box-shadow: 0px 0px 10px 10px #e1358f inset;
+/*     box-shadow: 0px 0px 10px 10px green inset;*/
+    font-style: italic;
+    background: lightblue;
+  }
+
+
+
+
+/*  .Configure-baseOption:not(:checked){
+    box-shadow:0px 0px 10px 10px blue inset;
+  }*/
+  
+  /* special styling if comparison option is among the convertTo selections */
+  
+  .Configure-comparisonOption.is-selectedComparison {
+    background: lightblue;
+    background: radial-gradient(hsl(240,85%,80%) 10%, hsl(225,75%,46%) 90%);
+    border-top: 1px solid black;
+    color: white;
+    font-weight: 9;
+  }
+  
+  /* hovered options in select list are :checked, if this option is-selectedComparison- which already is specially styled, add a box-shadow so that user still sees a hover change which is distinct from :checked behavior for options which are not is-selectedComparisonhightlight  */
+  
+  .Configure-comparisonOption.is-selectedComparison:checked {
+    box-shadow: 10px 5px 4px 10px grey;
+  }

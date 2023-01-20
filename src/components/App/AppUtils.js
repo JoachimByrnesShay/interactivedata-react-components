@@ -1,4 +1,4 @@
-import FetchConstants from "./globalConstants.js";
+import FetchConstants from "./AppConstants.js";
 
 export function fetchAll(currencySelections, currencyInfo, setCurrencyInfo) {
     let baseRates = `latest.json?app_id=${FetchConstants.app_id}&base='${currencySelections.convertFrom}'`;

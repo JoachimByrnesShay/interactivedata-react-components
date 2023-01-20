@@ -9,8 +9,8 @@ import CurrentConfigurationOverview from "../Configuration/CurrentConfigurationO
 import PanelToClearCharts from "../Configuration/PanelToClearCharts/PanelToClearCharts.js";
 import AllCharts from "../Charting/AllCharts/AllCharts.js";
 
-import { fetchAll, windowResizeListener } from "../globalUtils.js";
-import { MaxNumOfComparisons } from "../globalConstants.js";
+import { fetchAll, windowResizeListener } from "./AppUtils.js";
+import { MaxNumOfComparisons } from "./AppConstants.js";
 
 function App() {
   // boolean value stored in isSmallScreen controls the dimension of the charts, i.e. width or height, which is dependant upon screen size,
@@ -100,7 +100,7 @@ function App() {
         currencySelections={currencySelections}
         setCurrencySelections = {setCurrencySelections}
       />*/}
-      <section className="Configure">
+      <section className="AppConfigure">
         <BaseConfigurationForm
           currencyInfo={currencyInfo}
           currencySelections={currencySelections}
@@ -117,6 +117,7 @@ function App() {
 
         {/* check if I need to cross reference baseconfigurer refs here also*/}
         <ComparisonsConfigurationForm
+          maxNumOfComparisons={MaxNumOfComparisons}
           currencyInfo={currencyInfo}
           currencySelectionsState={{currencySelections,setCurrencySelections}}
           appRefs={{

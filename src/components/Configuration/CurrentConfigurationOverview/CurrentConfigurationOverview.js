@@ -1,3 +1,6 @@
+import './CurrentConfigurationOverview.css';
+
+
 function CurrentConfigurationOverview(props) {
 
 	return (

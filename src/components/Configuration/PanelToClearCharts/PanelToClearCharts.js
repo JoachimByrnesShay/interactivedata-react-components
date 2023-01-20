@@ -1,4 +1,7 @@
+import './PanelToClearCharts.css';
 import ChartsUtils from "../../Charting/AllCharts/utils-allChartsDisplay.js"
+
+
 function ClearChartsContainer(props) {
 	return (
 

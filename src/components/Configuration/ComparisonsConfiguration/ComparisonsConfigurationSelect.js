@@ -26,7 +26,9 @@ function ComparisonsConfigurationSelect(props) {
 							convertSelect: props.appRefs.convertSelect,
 						},
 
-					}, e)
+					}, 
+					props.maxNumOfComparisons, 
+					e)
 				}
 			>
 				{
@@ -58,7 +60,7 @@ function ComparisonsConfigurationSelect(props) {
 												props.currencySelectionsState.setCurrencySelections,
 											setIsFlashDisplayed: props.setIsFlashDisplayed,
 										},
-
+										maxNumOfComparisons: props.maxNumOfComparisons,
 										optionVal: curr,
 										e: e,
 									})

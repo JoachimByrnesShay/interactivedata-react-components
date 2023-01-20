@@ -1,0 +1,88 @@
+
+  
+  /* show the help cursor on the display of current selections in base section heading and in separate current base/comparisons selections element, which are also elsewhere designed to display custom tooltip at same time */
+  
+  .Configure-showCurrentConfiguration p:hover {
+    cursor: help;
+  }
+  
+  /* the display of currently selected base and comparison currencies in the show configuration areas */
+  .Configure-comparisonValue, .Configure-baseValue {
+    background: linear-gradient(-40deg, grey 0%, black 70%);
+    align-self: baseline;
+    margin: 2px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white,10px 1px 9px white;
+    padding: 2px;
+  }
+  
+  
+  
+  /* custom tooltip shown on display of base currency in base configuration header, and 
+  on display of base currency and display of comparison currency selections in separate current base/comparisons settings window */
+  
+  .Configure-comparisonValue[data-tooltip-title]:hover::after,
+  .Configure-baseValue[data-tooltip-title]:hover::after {
+    content: attr(data-tooltip-title);
+    position: absolute;
+    top: 60%;
+    left: 7%;
+    background: purple;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: .8em;
+    text-align: left;
+    z-index: 10;
+    border-radius: 5px;
+    padding: .2em 1em;
+    box-shadow: -3px -4px 7px grey;
+    text-transform: initial;
+    text-shadow: initial;
+  }
+  
+  
+  /* display and sizing controls for container of clear charts button and for display area of current base/comparisons selections */
+  
+  .Configure-showCurrentConfigurationContainer {
+    background: beige;
+    border-radius: 5px;
+    min-width: 10em;
+    width: 22em;
+    margin-top: 1.2em;
+    margin-left: 5%;
+    display: grid;
+    align-self: center;
+    width: fit-content;
+    justify-content: space-between;
+  }
+
+  .Configure-showCurrentConfigurationContainer {
+    border: 3px solid black;
+    border-radius: 3px;
+    padding:0;
+  }
+
+  .Configure-showCurrentConfiguration {
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    width: 19em;
+    margin: 0;
+  }
+
+ 
+  .Configure-showBaseContainer {
+     background:lightgrey;
+     padding-right:1em;
+
+  }
+  
+
+   

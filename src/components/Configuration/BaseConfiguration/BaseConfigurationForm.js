@@ -3,7 +3,8 @@
 //import BaseConfigurationFilter from './BaseConfigurationFilter.js';
 import {FilterHandling} from "../filterHandlingUtils.js";
 import BaseConfigurationSelect from './BaseConfigurationSelect.js';
-import "../AllChartsConfiguration/Configuration.css";
+import "./BaseConfiguration.css";
+
 
 function BaseConfigurationForm(props) {
 	const {baseSelectVal,setBaseSelectVal} = props.baseSelectValState;
