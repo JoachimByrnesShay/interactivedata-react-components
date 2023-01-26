@@ -1,98 +1,78 @@
 
+.Header > div {
+  margin-left: 15em;
+}
+
+.Header > div > p {
+  display: inline;
+  margin-left: 1em;
+  background:beige;
+}
+
 .Header {
-    background: var(--Header-backgroundColor);
-   
-  }
-  .Header > div {
-    margin-left: 15em;
-  }
-  .Header > div > p {
-    display: inline;
-    margin-left: 1em;
-    background:beige;
-  }
+  background: var(--Header-backgroundColor);
+  align-items: stretch;
+  padding: 1.2em;
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+}
 
-  .Header {
-    background: var(--Header-backgroundColor);
-    align-items: stretch;
-    padding: 1.2em;
-    display: grid;
-    grid-template-columns: 3fr 5fr;
-  }
-  
-  .Header-title {
-    font-weight: 400;
-    font-size: 16px;
-    color: var(--Header-textColor);
-    text-transform: uppercase;
-    justify-self: flex-start;
-    display: flex;
-    align-items: center;
-    margin-left: 5%;
-  }
-  
-  .Header-flashContainer {
-    color: var(--Header-flashContainer-textColor);
-    text-shadow: 2px 3px 6px black;
-    font-weight: bold;
-    padding: 0;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    border-radius: 7px;
-    justify-items: center;
-    align-items: center;
-    font-size: 90%;
-    background: var(--Header-flashMessageColor);
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s ease-out, opacity 2s ease-out;
-   
-  }
+.Header-title {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--Header-textColor);
+  text-transform: uppercase;
+  justify-self: flex-start;
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
 
-   /* flash message when user tries to select more than the maximum allowable comparison currencies, a value which is configured by a constant in App.js */
-  .Header-flashContainer.isDisplayed {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0s linear;
-    background: var(--Header-flashMessageColor);
-      
-  }
+.Header-flashContainer {
+  color: var(--Header-flashContainer-textColor);
+  text-shadow: 2px 3px 6px black;
+  font-weight: bold;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  border-radius: 7px;
+  justify-items: center;
+  align-items: center;
+  font-size: 90%;
+  background: var(--Header-flashMessageColor);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s ease-out, opacity 2s ease-out; 
+}
 
-  .Header-flashMessage {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: var(--Header-flashMessageColor) !important;
-  }
+ /* flash message when user tries to select more than the maximum allowable comparison currencies, a value which is configured by a constant in App.js */
+.Header-flashContainer.isDisplayed {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0s linear;
+  background: var(--Header-flashMessageColor);
+}
 
-  @media only screen and (max-width: 640px) {
+.Header-flashMessage {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--Header-flashMessageColor) !important;
+}
+
+@media only screen and (max-width: 640px) {
   .Header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
-
   .Header-title {
     color: transparent;
   }
 }
 
-
 @media only screen and (max-width:  330px) {
-
   .Footer, .Header-title {
     font-size: 70%;
   }
 }
 
-
-/* for a more pleasing transition of disappearance of all barChartContainers on clearcharts button click */
-
-/*@keyframes clearCharts {
-    0% {
-      opacity: 1;
-    }
-  
-    100% {
-      opacity: 0;
-    }
-  }*/

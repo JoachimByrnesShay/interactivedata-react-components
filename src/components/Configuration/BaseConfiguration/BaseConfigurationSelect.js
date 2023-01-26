@@ -3,10 +3,8 @@ import { SelectHandling } from "../selectHandlingUtils.js";
 function BaseConfigurationSelect(props) {
 	const onKeyUpArg = {
 		selectState: {
-			currencySelections:
-				props.currencySelectionsState.currencySelections,
-			setCurrencySelections:
-				props.currencySelectionsState.setCurrencySelections,
+			currencySelections: props.currencySelectionsState.currencySelections,
+			setCurrencySelections: props.currencySelectionsState.setCurrencySelections,
 			setBaseSelectValue: props.baseSelectValState.setBaseSelectVal,
 			prevBaseIndex: props.prevBaseIndexState.prevBaseIndex,
 			setPrevBaseIndex: props.prevBaseIndexState.setPrevBaseIndex,
@@ -15,30 +13,24 @@ function BaseConfigurationSelect(props) {
 			baseSelect: props.appRefs.baseSelect,
 			baseFilter: props.appRefs.baseFilter,
 		},
-
 	}
-	
 
 	function currencyNamesToOptions(names) {
 		/* using map, option with text of currency abbreviation will be created for all named currencies, filtered as appropriate by input/filter value */
-			/* value which is set on select element will change via select onChange and be set to selected option, via state */
+		/* value which is set on select element will change via select onChange and be set to selected option, via state */
 		return (names
 			.filter((currency) =>
-				currency
-					.toLowerCase()
-					.startsWith(
-						props.baseFilterValState.baseFilterVal.toLowerCase()
-					)
-			)
-			.map((currency, index) => (
+				currency.toLowerCase().startsWith(
+					props.baseFilterValState.baseFilterVal.toLowerCase()
+				)
+			).map((currency, index) => (
 				<BaseConfigurationOption  
 				    key={index}
 					currency={currency}
 					currencyInfo={props.currencyInfo}
-					currencySelectionsState={props.currencySelectionsState}
-					
+					currencySelectionsState={props.currencySelectionsState}		
 				/>
-			)))
+		)))
 	}
 
 	return (
@@ -49,12 +41,9 @@ function BaseConfigurationSelect(props) {
 			className={"Configure-baseSelectBox"}
 			value={props.baseSelectValState.baseSelectVal}
 			onKeyUp={(e) => SelectHandling.baseSelectKeys(onKeyUpArg, e)}
-			onChange={(e) =>
-				props.baseSelectValState.setBaseSelectVal(e.target.value)
-			}
-
+			onChange={(e) => props.baseSelectValState.setBaseSelectVal(e.target.value)}
 		>
-		{currencyNamesToOptions(Object.keys(props.currencyInfo.fullNames))}
+			{currencyNamesToOptions(Object.keys(props.currencyInfo.fullNames))}
 		</select>
 	)
 }
@@ -62,31 +51,22 @@ function BaseConfigurationSelect(props) {
 function BaseConfigurationOption(props) {
 	const handleOptionClick_baseArg = {
 		baseState: {
-			currencySelections:
-				props.currencySelectionsState.currencySelections,
-			setCurrencySelections:
-				props.currencySelectionsState.setCurrencySelections,
-		},
-	};
+			currencySelections: props.currencySelectionsState.currencySelections,
+			setCurrencySelections: props.currencySelectionsState.setCurrencySelections,
+	}};
+
 	return (
 		<option
 			value={props.currency}
 			className={"Configure-baseOption"}
-			onClick={(e) => {
-				
-				SelectHandling.handleOptionClick_base(
-
-					// baseState.setCurrencySelections({ ...baseState.currencySelections, convertFrom: optionVal })
+			onClick={(e) => { SelectHandling.handleOptionClick_base(
 					{ ...handleOptionClick_baseArg, optionVal: props.currency },
-					e
-				);
+					e );
 			}}
 		>
 			{props.currency}: {props.currencyInfo.fullNames[props.currency]}
 		</option>
-
 	)
-	
 }
 
 export default BaseConfigurationSelect;

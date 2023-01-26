@@ -1,56 +1,45 @@
 
-
-
-
 .Configure-clearChartsContainer {
-    background: beige;
-    border-radius: 5px;
-    min-width: 10em;
-    width: 22em;
-    margin-top: 1.2em;
-    margin-left: 5%;
-    display: grid;
-    align-self: center;
-    width: fit-content;
-    justify-content: space-between;
-  }
+  background: beige;
+  border-radius: 5px;
+  min-width: 10em;
+  width: 22em;
+  margin-top: 1.2em;
+  margin-left: 5%;
+  display: grid;
+  align-self: center;
+  width: fit-content;
+  justify-content: space-between;
+}
 
-    .Configure-clearChartsButton {
-    background: hsl(280,70%,90%);
-    padding: 0.5em;
-    color: blue;
-    font-weight: 9;
-    text-shadow: 2px 5px 5px orange, 4px 3px 4px gray;
-    border-radius: .6em;
-    text-transform: uppercase;
-    font-weight: 600;
-    border: 3px solid black;
-    box-shadow: 10px 20px 30px gray;
-  }
-  
-  /* add a "press in" visual animation to clear charts button */
-  .Configure-clearChartsButton--pressed {
-    animation: pressInClearButton 200ms ease-out 0ms;
-    animation-iteration-count: 1;
-  }
+  .Configure-clearChartsButton {
+  background: hsl(280,70%,90%);
+  padding: 0.5em;
+  color: blue;
+  font-weight: 9;
+  text-shadow: 2px 5px 5px orange, 4px 3px 4px gray;
+  border-radius: .6em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 3px solid black;
+  box-shadow: 10px 20px 30px gray;
+}
 
-  
+/* add a "press in" visual animation to clear charts button */
+.Configure-clearChartsButton--pressed {
+  animation: pressInClearButton 200ms ease-out 0ms;
+  animation-iteration-count: 1;
+}
 
-/* animations */
-
-  
-  /* visual button press effect for clear charts button */
-  
+/* visual button press effect for clear charts button */
 @keyframes pressInClearButton {
   0% {
     box-shadow: 15px 15px 20px gray;
   }
-
   90% {
     box-shadow: 1px 1px 1px grey;
     display: none;
   }
-
   100% {
     box-shadow: 15px 15px 20px gray;
     display: block;

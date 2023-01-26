@@ -1,5 +1,8 @@
 import FetchConstants from "./AppConstants.js";
 
+
+// selected API requires 2 separate URLS to get the desired data as above, one for rates, one with the full names, 
+// thus 2 fetches which are chained and nested so that ALL info is ready upon first render
 export function fetchAll(currencySelections, currencyInfo, setCurrencyInfo) {
     let baseRates = `latest.json?app_id=${FetchConstants.app_id}&base='${currencySelections.convertFrom}'`;
     let baseSubURLfullNames = "currencies.json";
