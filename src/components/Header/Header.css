@@ -1,7 +1,7 @@
 
 .Header {
     background: var(--Header-backgroundColor);
-    display:flex;
+   
   }
   .Header > div {
     margin-left: 15em;

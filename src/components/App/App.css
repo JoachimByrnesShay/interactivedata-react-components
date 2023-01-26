@@ -21,6 +21,7 @@ body {
     grid-template-rows: 3fr 5fr 40fr 1fr;
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
+    box-sizing:border-box;
   }
   
     .AppConfigure {
