@@ -50,16 +50,7 @@ function App() {
     animatingDisappearance: Array(MaxNumOfComparisons + 1).fill(false),
   });
 
-  // call fetch on first render and whenever changes
-  //, as the rates to be retrieved from API for all currencies are relative to the base currency, and therefore will change
-  useEffect(
-    () => fetchAll(currencySelections, currencyInfo, setCurrencyInfo),
-    [currencySelections]
-  );
 
-  // listen on window for resize.  at less than 950 innerwidth, isSmallScreen will be set to true.  This will be used in JSX in conjunction with ChartsUtils.getChartsOrientation to change the dimension of graph
-  // section to horizontal or vertical depending on the value of isSmallScreen, oonditionally using inline css 'width' or 'height' but not both, along with calculated size of graph element
-  useEffect(() => windowResizeListener(setIsSmallScreen), []);
 
   const [animateClearChartsComparisons, setAnimateClearChartsComparisons] =
     useState(false);
@@ -84,6 +75,21 @@ function App() {
   const [isFlashDisplayed, setIsFlashDisplayed] = useState(false);
   const currencySelectionsState = {currencySelections,setCurrencySelections};
 
+  // call fetch on first render and whenever changes
+  //, as the rates to be retrieved from API for all currencies are relative to the base currency, and therefore will change
+  useEffect(
+    () => fetchAll(currencySelections, currencyInfo, setCurrencyInfo),
+    [currencySelections]
+  );
+   // by controlling the UI with value of state variable, allow a fadeout effect of flash warning (shown when user tries to exceed max num of allowable selections of comparison currencies)
+    useEffect(() => {if (isFlashDisplayed){
+      setTimeout(()=>{setIsFlashDisplayed(false)}, 2000);
+    }}, [isFlashDisplayed]);
+
+  // listen on window for resize.  at less than 950 innerwidth, isSmallScreen will be set to true.  This will be used in JSX in conjunction with ChartsUtils.getChartsOrientation to change the dimension of graph
+  // section to horizontal or vertical depending on the value of isSmallScreen, oonditionally using inline css 'width' or 'height' but not both, along with calculated size of graph element
+  useEffect(() => windowResizeListener(setIsSmallScreen), []);
+
   const Refs = {
     baseFilter: useRef(null),
     convertFilter: useRef(null),
@@ -92,7 +98,10 @@ function App() {
   };
   return (
     <div className="App">
-      <Header />
+      <Header 
+        isFlashDisplayed={isFlashDisplayed}
+        MaxNumOfComparisons={MaxNumOfComparisons}
+      />
       {/*    <AllChartsConfiguration
         animateClearChartsComparisonsState={animateClearChartsComparisonsState}
         setAnimateClearChartsComparisons={setAnimateClearChartsComparisons}
