@@ -8,7 +8,7 @@ function BarChartTitle(props) {
 			style={{
 				[position]:
 					chartInfo.size < 8
-						? `calc(100% + 1em)`
+						? `calc(${chartInfo.size}% + 2em)`
 						: "0em",
 			}}
 			className={`ChartContent-barChartTitle ${
