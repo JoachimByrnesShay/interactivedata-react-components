@@ -24,7 +24,10 @@ function BarChart(props) {
                 onClick={onClickHandler}
                 onMouseLeave={onMouseLeaveHandler}
             >
-                <BarChartTitle chartInfo={props.chartInfo} />
+                <BarChartTitle 
+                    chartInfo={props.chartInfo} 
+                    isSmallScreen={props.isSmallScreen}
+                />
                 <Modal
                     // ix={ix}
                     // currencyInfo={currencyInfo}

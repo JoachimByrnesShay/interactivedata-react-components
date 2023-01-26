@@ -1,11 +1,14 @@
 function BarChartTitle(props) {
 	const chartInfo = props.chartInfo;
+	const position = props.isSmallScreen ? "left" : "bottom";
+	console.log("chartSize: ",chartInfo.size);
+	console.log(position);
 	return (
 		<p
 			style={{
-				bottom:
+				[position]:
 					chartInfo.size < 8
-						? `calc(${chartInfo.size}% + 1em)`
+						? `calc(100% + 1em)`
 						: "0em",
 			}}
 			className={`ChartContent-barChartTitle ${
