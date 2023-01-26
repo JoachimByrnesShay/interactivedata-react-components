@@ -1,4 +1,3 @@
-// import ModalText from "./ModalText.js"
 import './Modal.css';
 
 function Modal(props) {
@@ -8,19 +7,18 @@ function Modal(props) {
     const modalDisplayClassName = chartModalIsDisplayed ? "isdisplayed": (chartModalIsAnimatingDisappearance ? "disappearModal" : "");
 
 	return(
-	<div         
-       className={`Modal ${modalDisplayClassName}`}
-    >
-       <p>{props.currencyInfo.fullNames[props.chartInfo.currency]}</p>
-            <p>
-                1 {props.currencySelections.convertFrom}==
-                {props.currencyInfo.rates[props.chartInfo.currency]}{" "}
-                {props.chartInfo.currency}
-            </p>
-       
-    </div>
+    	<div         
+           className={`Modal ${modalDisplayClassName}`}
+        >
+           <p>{props.currencyInfo.fullNames[props.chartInfo.currency]}</p>
+                <p>
+                    1 {props.currencySelections.convertFrom}==
+                    {props.currencyInfo.rates[props.chartInfo.currency]}{" "}
+                    {props.chartInfo.currency}
+                </p>
+           
+        </div>
     )
 }
-
 
 export default Modal;

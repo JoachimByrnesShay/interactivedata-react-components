@@ -1,4 +1,4 @@
-import {FilterHandling} from '../filterHandlingUtils.js';
+import {FilterHandling} from '../utils-filterHandling.js';
 import ComparisonsConfigurationSelect from './ComparisonsConfigurationSelect.js';
 import './ComparisonsConfiguration.css';
 

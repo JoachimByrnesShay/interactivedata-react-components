@@ -19,7 +19,6 @@
   }
 
   /* clear all charts other than base currency chart when the --clearCharts class is added */
-
   .ChartContent--clearCharts .ChartContent-barChartContainer:not(.is-baseChart) {
     animation: clearCharts 2s normal forwards;
     animation-iteration-count: 1;
@@ -39,7 +38,6 @@
     display: inline-block;
     margin: 0 auto;
    }
-
 
   .ChartContent-barChartContainer:nth-of-type(even) .ChartContent-barChart {
     background: var(--ChartContent-barChart--even-backgroundColor);
@@ -78,8 +76,6 @@
   
 
  @media only screen and (max-width: 950px) {
-
-
   .ChartContent-barChartContainer {/* charts are adjusted to be appropriately styled for re-orientation to horizontal charts on small screens, vs vertical on 950px+ screens */
     width: 100%;
     height: inherit;
@@ -99,7 +95,6 @@
     padding-top: 0;
     height: 90%;
   }
- 
 
   .ChartContent-barChartContainer.is-baseChart::after {
     content: "BASE CURRENCY";
@@ -107,17 +102,14 @@
     font-weight:bold;
     text-orientation: mixed;
     position: absolute;
-    
     top: 35%;
     left: 35%;
-    writing-mode: horizontal-tb;
-   
+    writing-mode: horizontal-tb;   
     display: inline-block;
     margin: 0 auto;
     text-shadow:1px 1px 3px white;
   }
  }
-
 
  @media only screen and (max-width:  330px) {
   .ChartContent-barChart {
@@ -128,10 +120,7 @@
   }
 }
 
-
-
 /* for a more pleasing transition of disappearance of all barChartContainers on clearcharts button click */
-
 @keyframes clearCharts {
     0% {
       opacity: 1;
@@ -140,4 +129,4 @@
     100% {
       opacity: 0;
     }
-  }
+}

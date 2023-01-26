@@ -52,8 +52,7 @@ function App() {
   // state of button press animation for clear charts button
   const [animateClearChartsButton, setAnimateClearChartsButton] = useState(false);
 
-  /* moved from config */
-   // storing of indices as previous values aids the control of visual and functional navigation from index 0 on select lists into filter input (focus in filter input) via onKeyUp condition regarding arrowUp
+  // storing of indices as previous values aids the control of visual and functional navigation from index 0 on select lists into filter input (focus in filter input) via onKeyUp condition regarding arrowUp
   const [prevBaseIndex, setPrevBaseIndex] = useState(-1);
   const [prevConvertIndex, setPrevConvertIndex] = useState(-1);
 

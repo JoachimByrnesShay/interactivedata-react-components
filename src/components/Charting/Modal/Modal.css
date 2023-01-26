@@ -7,7 +7,6 @@
     position: absolute;
     margin: 0 auto;
     top: 30%;
-    
     white-space: nowrap;
     padding: 0 1em;
     align-items: center;
@@ -18,9 +17,7 @@
   }
   
   /* state of modal = display */
-  
   /* make modal visible, and use flex to keep text centered consistently across screenwidth changes*/
-  
   .Modal.isdisplayed {
     display: flex;
     visibility:visible;

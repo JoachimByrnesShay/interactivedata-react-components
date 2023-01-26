@@ -1,4 +1,4 @@
-import { SelectHandling } from "../selectHandlingUtils.js";
+import { SelectHandling } from "../utils-selectHandling.js";
 
 function BaseConfigurationSelect(props) {
 	const onKeyUpArg = {

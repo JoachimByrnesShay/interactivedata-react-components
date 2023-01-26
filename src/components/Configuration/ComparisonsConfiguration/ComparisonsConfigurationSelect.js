@@ -1,4 +1,4 @@
-import {SelectHandling} from '../selectHandlingUtils';
+import {SelectHandling} from '../utils-selectHandling';
 
 function ComparisonsConfigurationSelect(props) {
 	return (
