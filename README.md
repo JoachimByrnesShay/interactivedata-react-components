@@ -1,6 +1,6 @@
 ### An interactive data visualization using Components in React 
 
-### Joachim Byrnes-Shay, jan 6 2023
+### Joachim Byrnes-Shay, jan 2clear6 2023
 
 ### deployed on heroku, live page here---
 
@@ -12,7 +12,7 @@ https://github.com/JoachimByrnesShay/interactivedata-react-components
 
 ### Screen shot of page working
 
-[soon]
+[![App-Screen-Shot2.png](https://i.postimg.cc/dtP48KBX/App-Screen-Shot2.png)](https://postimg.cc/0rnYsFhd)
 
 ### Project
 

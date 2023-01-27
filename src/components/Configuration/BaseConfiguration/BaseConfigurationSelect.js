@@ -1,4 +1,4 @@
-import { SelectHandling } from "../utils-selectHandling.js";
+import {BaseSelectHandling} from './utils-baseSelectHandling';
 
 function BaseConfigurationSelect(props) {
 	const onKeyUpArg = {
@@ -40,7 +40,7 @@ function BaseConfigurationSelect(props) {
 			size="4"
 			className={"Configure-baseSelectBox"}
 			value={props.baseSelectValState.baseSelectVal}
-			onKeyUp={(e) => SelectHandling.baseSelectKeys(onKeyUpArg, e)}
+			onKeyUp={(e) => BaseSelectHandling.baseSelectKeys(onKeyUpArg, e)}
 			onChange={(e) => props.baseSelectValState.setBaseSelectVal(e.target.value)}
 		>
 			{currencyNamesToOptions(Object.keys(props.currencyInfo.fullNames))}
@@ -59,7 +59,7 @@ function BaseConfigurationOption(props) {
 		<option
 			value={props.currency}
 			className={"Configure-baseOption"}
-			onClick={(e) => { SelectHandling.handleOptionClick_base(
+			onClick={(e) => { BaseSelectHandling.handleOptionClick_base(
 					{ ...handleOptionClick_baseArg, optionVal: props.currency },
 					e );
 			}}

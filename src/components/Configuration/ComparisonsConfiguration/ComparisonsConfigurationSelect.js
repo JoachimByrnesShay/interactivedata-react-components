@@ -1,4 +1,4 @@
-import {SelectHandling} from '../utils-selectHandling';
+import {ComparisonsSelectHandling} from './utils-comparisonsSelectHandling';
 
 function ComparisonsConfigurationSelect(props) {
 	return (
@@ -10,7 +10,7 @@ function ComparisonsConfigurationSelect(props) {
 			value={props.convertSelectValState.convertSelectVal}
 			onChange={(e) => props.convertSelectValState.setConvertSelectVal(e.target.value)}
 			onKeyUp={(e) =>
-				SelectHandling.convertSelectKeys(
+				ComparisonsSelectHandling.convertSelectKeys(
 					{	
 						selectState: {
 							currencySelections: props.currencySelectionsState.currencySelections,
@@ -47,7 +47,7 @@ function ComparisonsConfigurationSelect(props) {
 								: ""
 						}`}
 						onClick={(e) =>
-							SelectHandling.handleOptionClick_convert({
+							ComparisonsSelectHandling.handleOptionClick_convert({
 								convertState: {
 									currencySelections: props.currencySelectionsState.currencySelections,
 									setCurrencySelections: props.currencySelectionsState.setCurrencySelections,
